@@ -1,0 +1,49 @@
+/* Bottom Navigation Bar CSS */
+.navbar-bottom
+  button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium::after {
+  content: "........";
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  color: transparent;
+  border-color: transparent;
+  border-radius: 6px 6px 0px 0px;
+  background: linear-gradient(white, white) padding-box padding-box,
+    linear-gradient(to right, rgb(222, 87, 229), rgb(136, 99, 251)) border-box
+      border-box;
+  height: 0px;
+  margin-top: calc(3rem - 4px);
+  width: 0px;
+  transition: width 0.5s;
+  visibility: hidden;
+}
+
+.navbar-bottom
+  button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium:hover:after {
+  width: 2.5rem;
+  visibility: visible;
+}
+
+.navbar-bottom
+  button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium {
+  background: transparent;
+  border-radius: 16px;
+  padding-block: 3px;
+  margin-block: 3px;
+  font-weight: 400;
+}
+
+.navbar-bottom
+  button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium:hover {
+  background: linear-gradient(
+    to right,
+    rgb(222 87 229 / 10%) 0%,
+    rgb(136 99 251 / 10%) 100%
+  );
+  font-weight: 500;
+}
+
+.navbar-bottom
+  span.MuiTypography-root.MuiTypography-caption.css-luvtok-MuiTypography-root:hover {
+  font-weight: inherit;
+}
