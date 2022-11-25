@@ -52,7 +52,7 @@ function NavbarTopBigScreen() {
         <Grid item sx={{ display: "flex", alignItems: "center" }}>
           <div>
             <img
-              src="https://pradyut-work-1-congenial-goldfish-56vxw456p47hp4xp-3000.preview.app.github.dev/20221120_164757_0001-removebg-preview-removebg-preview.png"
+              src="https://pradyut-work-1-didactic-goggles-9v6jpqwvgx9c7vvq-3000.preview.app.github.dev/20221120_164757_0001-removebg-preview-removebg-preview.png"
               style={{ height: "1.75rem" }}
             />
           </div>
@@ -259,8 +259,8 @@ function NavbarTopSmallScreen() {
                 <IconButton
                   onClick={() => setNavbarOpen(!navbarOpen)}
                   sx={{
-                    transform: navbarOpen ? "rotate(180deg)" : "rotate(0deg)",
-                    transition: "transform .5s",
+                    transform: navbarOpen ? "rotate(90deg)" : "rotate(0deg)",
+                    transition: "transform .25s",
                     transitionTimingFunction: "ease-out",
                   }}
                 >
@@ -268,7 +268,7 @@ function NavbarTopSmallScreen() {
                 </IconButton>
                 <div style={{ display: "flex", paddingInlineStart: 2 }}>
                   <img
-                    src="https://pradyut-work-1-congenial-goldfish-56vxw456p47hp4xp-3000.preview.app.github.dev/20221120_164757_0001-removebg-preview-removebg-preview.png"
+                    src="https://pradyut-work-1-didactic-goggles-9v6jpqwvgx9c7vvq-3000.preview.app.github.dev/20221120_164757_0001-removebg-preview-removebg-preview.png"
                     style={{ height: "1.25rem" }}
                   />
                 </div>

@@ -11,7 +11,23 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
-import { AvatarIcon, LocationIcon, ShopIcon } from "../Icons";
+import {
+  AffordableIcon,
+  LogoutIcon,
+  AvatarIcon,
+  BestBuyIcon,
+  CouponIcon,
+  CustomerCareIcon,
+  GiftCardIcon,
+  LocationIcon,
+  NewIcon,
+  NotificationIcon,
+  OrdersIcon,
+  ShopIcon,
+  TrendingIcon,
+  WishlistIcon,
+  PrivacyPolicyIcon,
+} from "../Icons";
 
 export default function NavbarDrawer({ open }) {
   return (
@@ -161,17 +177,51 @@ export default function NavbarDrawer({ open }) {
           </Grid>
         </Box>
         <Box
+        className="nav-scroll"
           sx={{
             px: 2,
-            overflow: 'scroll',
-            height: 'calc(100% - 213px - 16px *2)'
+            overflowY: "scroll",
+            height: "calc(100% - 213px - 16px *2)",
           }}
         >
           <List>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <LocationIcon />
+                  <TrendingIcon />
+                </ListItemIcon>
+                <ListItemText primary="Trending" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <BestBuyIcon />
+                </ListItemIcon>
+                <ListItemText primary="Best Buy" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <AffordableIcon />
+                </ListItemIcon>
+                <ListItemText primary="Affordable" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <NewIcon />
+                </ListItemIcon>
+                <ListItemText primary="New" />
+              </ListItemButton>
+            </ListItem>
+            <Divider />
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <OrdersIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Orders" />
               </ListItemButton>
@@ -179,7 +229,7 @@ export default function NavbarDrawer({ open }) {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <WishlistIcon />
                 </ListItemIcon>
                 <ListItemText primary="Wishlist" />
               </ListItemButton>
@@ -187,7 +237,7 @@ export default function NavbarDrawer({ open }) {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <CouponIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Coupons" />
               </ListItemButton>
@@ -195,7 +245,7 @@ export default function NavbarDrawer({ open }) {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <GiftCardIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Gift Cards" />
               </ListItemButton>
@@ -203,7 +253,7 @@ export default function NavbarDrawer({ open }) {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <NotificationIcon />
                 </ListItemIcon>
                 <ListItemText primary="Notification" />
               </ListItemButton>
@@ -213,7 +263,7 @@ export default function NavbarDrawer({ open }) {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <CustomerCareIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Customer Care" secondary="24x7" />
               </ListItemButton>
@@ -221,20 +271,30 @@ export default function NavbarDrawer({ open }) {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <PrivacyPolicyIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Privacy Policy" />
               </ListItemButton>
             </ListItem>
 
-            <Box sx={{height: '1rem'}}></Box>
+            <Box sx={{ height: "4rem" }}></Box>
 
-            <ListItem disablePadding sx={{ position: "fixed", bottom: "0", left: '0', px: 2, pb:1, bgcolor: 'secondary.main' }}>
+            <ListItem
+              disablePadding
+              sx={{
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+                px: 2,
+                py: .5,
+                bgcolor: "background.main",
+              }}
+            >
               <ListItemButton>
                 <ListItemIcon>
-                  <AvatarIcon />
+                  <LogoutIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Logout" />
+                <ListItemText primary="Logout" sx={{color: 'red'}} />
               </ListItemButton>
             </ListItem>
           </List>

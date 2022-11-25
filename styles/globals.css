@@ -21,3 +21,14 @@ a {
   border-radius: 12px;
   margin-block: 2px ;
 }
+
+
+/* width */
+.nav-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+.nav-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right,#de57e5 0%,#8863fb 100%);
+}
