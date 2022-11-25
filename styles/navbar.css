@@ -1,6 +1,5 @@
 /* Bottom Navigation Bar CSS */
-.navbar-bottom
-  button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium::after {
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-1eywqnu-MuiButtonBase-root-MuiButton-root::after {
   content: "........";
   position: absolute;
   border-width: 1px;
@@ -16,10 +15,10 @@
   width: 0px;
   transition: width 0.5s;
   visibility: hidden;
+  bottom: 0rem;
 }
 
-.navbar-bottom
-  button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium:hover:after {
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-1eywqnu-MuiButtonBase-root-MuiButton-root:hover:after {
   width: 2.5rem;
   visibility: visible;
 }

@@ -1,17 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import {
   Box,
   Typography,
-  Tabs,
-  Tab,
-  Badge,
   Grid,
-  TextField,
   InputBase,
   Button,
   useMediaQuery,
   IconButton,
   Autocomplete,
+  Popper,
 } from "@mui/material";
 import {
   CartIcon,
@@ -19,27 +16,33 @@ import {
   AvatarIcon,
   LocationIcon,
   ShopIcon,
-} from "./Icons";
+  MenuIcon,
+  CloseIcon,
+} from "../Icons";
+import NavbarDrawer from "../Drawer";
 
 export default function NavbarTop() {
-  const [value, setValue] = React.useState(0);
+  return useMediaQuery("(min-width:1024px)") ? (
+    <NavbarTopBigScreen />
+  ) : (
+    <NavbarTopSmallScreen />
+  );
+}
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+function NavbarTopBigScreen() {
+  const options = ["Option 1", "Option 2"];
+
+  const PopperMy = function (props) {
+    return <Popper {...props} placement="bottom-start" />;
   };
 
-  const ShowOnlyOnMidScreen = useMediaQuery("(min-width:768px)");
-  const ShowOnlyOnBigScreen = useMediaQuery("(min-width:1024px)");
-  const ShowOnlyOnLargeScreen = useMediaQuery("(min-width:1440px)");
-
-  const options = ["Option 1", "Option 2"];
   return (
     <Box
       className="navbar-top"
       sx={{
         bgcolor: "secondary.main",
-        height: 72,
         px: 2,
+        py: 1,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
@@ -67,7 +70,7 @@ export default function NavbarTop() {
             <Grid
               item
               sx={{
-                display: ShowOnlyOnBigScreen ? "flex" : "none",
+                display: "flex",
                 alignItems: "center",
               }}
             >
@@ -92,7 +95,7 @@ export default function NavbarTop() {
             <Grid
               item
               sx={{
-                display: ShowOnlyOnBigScreen ? "flex" : "none",
+                display: "flex",
                 alignItems: "center",
               }}
             >
@@ -136,6 +139,7 @@ export default function NavbarTop() {
               },
             }}
             id="search"
+            PopperComponent={PopperMy}
             options={options}
             renderInput={(params) => (
               <div ref={params.InputProps.ref}>
@@ -192,23 +196,176 @@ export default function NavbarTop() {
             justifyContent={"flex-end"}
           >
             <Grid item sx={{ display: "flex", alignItems: "center" }}>
-              <LocationIcon />
-              <Typography variant="caption" px={0.5}>
-                PINCODE
-              </Typography>
+              <Button>
+                <LocationIcon />
+                <Typography variant="caption" px={0.5}>
+                  PINCODE
+                </Typography>
+              </Button>
             </Grid>
             <Grid item>
-              <AvatarIcon />
+              <IconButton>
+                <AvatarIcon />
+              </IconButton>
             </Grid>
             <Grid item>
-              <WishlistIcon />
+              <IconButton>
+                <WishlistIcon />
+              </IconButton>
             </Grid>
             <Grid item>
-              <CartIcon />
+              <IconButton>
+                <CartIcon />
+              </IconButton>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
     </Box>
+  );
+}
+
+function NavbarTopSmallScreen() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const options = ["Option 1", "Option 2"];
+
+  const PopperMy = function (props) {
+    return <Popper {...props} placement="bottom-start" />;
+  };
+
+  return (
+    <>
+      <Box
+        className="navbar-top"
+        sx={{
+          bgcolor: "secondary.main",
+          px: 2,
+          py: 2,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <Grid container spacing={1}>
+          <Grid item xs={4}>
+            <Grid
+              container
+              spacing={2}
+              direction={"row"}
+              justifyContent={"flex-start"}
+            >
+              <Grid item sx={{ display: "flex", alignItems: "center" }} xs={6}>
+                <IconButton
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  sx={{
+                    transform: navbarOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform .5s",
+                    transitionTimingFunction: "ease-out",
+                  }}
+                >
+                  {navbarOpen ? <CloseIcon /> : <MenuIcon />}
+                </IconButton>
+                <div style={{ display: "flex", paddingInlineStart: 2 }}>
+                  <img
+                    src="https://pradyut-work-1-congenial-goldfish-56vxw456p47hp4xp-3000.preview.app.github.dev/20221120_164757_0001-removebg-preview-removebg-preview.png"
+                    style={{ height: "1.25rem" }}
+                  />
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={8}>
+            <Grid
+              container
+              spacing={1.5}
+              direction={"row"}
+              justifyContent={"flex-end"}
+            >
+              <Grid item>
+                <IconButton>
+                  <WishlistIcon />
+                </IconButton>
+              </Grid>
+              <Grid item>
+                <IconButton>
+                  <CartIcon />
+                </IconButton>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: "flex",
+            }}
+          >
+            <Autocomplete
+              sx={{
+                display: "inline-block",
+                width: "100%",
+                "& input": {
+                  bgcolor: "background.paper",
+                  color: (theme) =>
+                    theme.palette.getContrastText(
+                      theme.palette.background.paper
+                    ),
+                },
+              }}
+              id="search"
+              PopperComponent={PopperMy}
+              options={options}
+              renderInput={(params) => (
+                <div ref={params.InputProps.ref}>
+                  <InputBase
+                    sx={{
+                      py: 0.5,
+                      px: 0.5,
+                      flex: 1,
+                      fontSize: 12,
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: "transparent",
+                      borderRadius: "4px 4px 4px 4px",
+                      background:
+                        "linear-gradient(white,white) padding-box padding-box,linear-gradient(to right,rgb(222,87,229),rgb(136,99,251)) border-box border-box",
+                      width: "-webkit-fill-available",
+                      borderRadius: "6px 0px 0px 6px",
+                    }}
+                    placeholder="Search"
+                    inputProps={{ "aria-label": "Search Galleria" }}
+                    type="text"
+                    {...params.inputProps}
+                  />
+                </div>
+              )}
+            />
+
+            <IconButton
+              sx={{
+                background: "linear-gradient(to right,#de57e5 0%,#8863fb 100%)",
+                borderRadius: "0px 6px 6px 0px",
+              }}
+              disableElevation
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.75 16.9167L11.0833 12.25C10.6667 12.5833 10.1875 12.8472 9.64583 13.0417C9.10417 13.2361 8.52778 13.3333 7.91667 13.3333C6.40278 13.3333 5.12167 12.8092 4.07333 11.7608C3.02444 10.7119 2.5 9.43056 2.5 7.91667C2.5 6.40278 3.02444 5.12139 4.07333 4.0725C5.12167 3.02417 6.40278 2.5 7.91667 2.5C9.43056 2.5 10.7119 3.02417 11.7608 4.0725C12.8092 5.12139 13.3333 6.40278 13.3333 7.91667C13.3333 8.52778 13.2361 9.10417 13.0417 9.64583C12.8472 10.1875 12.5833 10.6667 12.25 11.0833L16.9375 15.7708C17.0903 15.9236 17.1667 16.1111 17.1667 16.3333C17.1667 16.5556 17.0833 16.75 16.9167 16.9167C16.7639 17.0694 16.5694 17.1458 16.3333 17.1458C16.0972 17.1458 15.9028 17.0694 15.75 16.9167V16.9167ZM7.91667 11.6667C8.95833 11.6667 9.84389 11.3022 10.5733 10.5733C11.3022 9.84389 11.6667 8.95833 11.6667 7.91667C11.6667 6.875 11.3022 5.98944 10.5733 5.26C9.84389 4.53111 8.95833 4.16667 7.91667 4.16667C6.875 4.16667 5.98944 4.53111 5.26 5.26C4.53111 5.98944 4.16667 6.875 4.16667 7.91667C4.16667 8.95833 4.53111 9.84389 5.26 10.5733C5.98944 11.3022 6.875 11.6667 7.91667 11.6667Z"
+                  fill="white"
+                />
+              </svg>
+            </IconButton>
+          </Grid>
+        </Grid>
+      </Box>
+      <NavbarDrawer open={navbarOpen} />
+    </>
   );
 }
