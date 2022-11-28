@@ -17,8 +17,20 @@ import React from "react";
 import UnstyledSelectSimple from "../../Components/Search/a/SortFilter";
 
 export default function SearchContainer() {
+  const products = [
+    { name: "Intertwined Glim Diamond Ring", mp: 32990, sp: 18990, img: ["https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg", "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg"] },
+    { name: "Intertwined Glim Diamond Ring", mp: 32990, sp: 18990, img: ["https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg", "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg"] },
+  ];
   return (
     <main>
+      {products.map((item, index) => (
+        <>
+          {item.name}, {item.mp} - {item.sp} <br />
+          {item.img.map((url, index) => (
+            <>{url}</>
+          ))}
+        </>
+      ))}
       <Box
         sx={{
           background:
@@ -525,30 +537,34 @@ export default function SearchContainer() {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
-                    // border: 1, 
-                    width: '100%',
+                    // border: 1,
+                    width: "100%",
                     p: 1,
                     borderRadius: 4,
                     "&: hover": {
-                      boxShadow: 10,
+                      boxShadow: 5,
                     },
                   }}
                 >
                   <Box
                     sx={{
-                      width: '100%',
-paddingBottom: '100%',
-backgroundImage: 'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
-backgroundRepeat: 'no-repeat',
-backgroundPosition: 'center center',
-backgroundSize: 'cover',
-border: '0.5px solid #ddd',
+                      width: "100%",
+                      paddingBottom: "100%",
+                      backgroundImage:
+                        'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg")',
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center center",
+                      backgroundSize: "cover",
+                      border: "0.5px solid #ddd",
 
-marginBlockEnd: 1,
-borderRadius: 2,
+                      marginBlockEnd: 1,
+                      borderRadius: 2,
+                      "&:hover": {
+                        backgroundImage:
+                          'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
+                      },
                     }}
-                  >
-                  </Box>
+                  ></Box>
                   <Box>
                     <Typography variant="h5" component="span" fontWeight={600}>
                       ₹18,990
@@ -602,30 +618,34 @@ borderRadius: 2,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
-                    // border: 1, 
-                    width: '100%',
+                    // border: 1,
+                    width: "100%",
                     p: 1,
                     borderRadius: 4,
                     "&: hover": {
-                      boxShadow: 10,
+                      boxShadow: 5,
                     },
                   }}
                 >
                   <Box
                     sx={{
-                      width: '100%',
-paddingBottom: '100%',
-backgroundImage: 'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
-backgroundRepeat: 'no-repeat',
-backgroundPosition: 'center center',
-backgroundSize: 'cover',
-border: '0.5px solid #ddd',
+                      width: "100%",
+                      paddingBottom: "100%",
+                      backgroundImage:
+                        'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg")',
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center center",
+                      backgroundSize: "cover",
+                      border: "0.5px solid #ddd",
 
-marginBlockEnd: 1,
-borderRadius: 2,
+                      marginBlockEnd: 1,
+                      borderRadius: 2,
+                      "&:hover": {
+                        backgroundImage:
+                          'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
+                      },
                     }}
-                  >
-                  </Box>
+                  ></Box>
                   <Box>
                     <Typography variant="h5" component="span" fontWeight={600}>
                       ₹18,990
@@ -679,30 +699,34 @@ borderRadius: 2,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
-                    // border: 1, 
-                    width: '100%',
+                    // border: 1,
+                    width: "100%",
                     p: 1,
                     borderRadius: 4,
                     "&: hover": {
-                      boxShadow: 10,
+                      boxShadow: 5,
                     },
                   }}
                 >
                   <Box
                     sx={{
-                      width: '100%',
-paddingBottom: '100%',
-backgroundImage: 'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
-backgroundRepeat: 'no-repeat',
-backgroundPosition: 'center center',
-backgroundSize: 'cover',
-border: '0.5px solid #ddd',
+                      width: "100%",
+                      paddingBottom: "100%",
+                      backgroundImage:
+                        'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg")',
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center center",
+                      backgroundSize: "cover",
+                      border: "0.5px solid #ddd",
 
-marginBlockEnd: 1,
-borderRadius: 2,
+                      marginBlockEnd: 1,
+                      borderRadius: 2,
+                      "&:hover": {
+                        backgroundImage:
+                          'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
+                      },
                     }}
-                  >
-                  </Box>
+                  ></Box>
                   <Box>
                     <Typography variant="h5" component="span" fontWeight={600}>
                       ₹18,990
