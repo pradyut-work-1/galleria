@@ -265,7 +265,7 @@ export default function NavbarDrawer({ open }) {
                 <ListItemIcon>
                   <CustomerCareIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Customer Care" secondary="24x7" />
+                <ListItemText primary="Contact Us" secondary="24x7" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>

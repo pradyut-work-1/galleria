@@ -18,7 +18,7 @@ export function CartIcon() {
           <rect width="20" height="20" fill="white" />
         </clipPath>
       </defs>
-    </svg>
+    </svg> 
   );
 }
 

@@ -11,11 +11,18 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/base": "^5.0.0-alpha.107",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/joy": "^5.0.0-alpha.55",
     "@mui/material": "^5.10.14",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "next": "13.0.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-aspect-ratio": "^1.1.2",
+    "react-dom": "18.2.0",
+    "react-ratio": "^0.1.5",
+    "react-swipeable-views": "^0.14.0",
+    "react-swipeable-views-utils": "^0.14.0"
   }
 }

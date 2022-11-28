@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../src/Components/Layout/Header";
+import HomePageCarousel from "../src/Components/Home/Carousel"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <HomePageCarousel />
     </div>
   );
 }
