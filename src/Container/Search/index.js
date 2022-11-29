@@ -18,19 +18,27 @@ import UnstyledSelectSimple from "../../Components/Search/a/SortFilter";
 
 export default function SearchContainer() {
   const products = [
-    { name: "Intertwined Glim Diamond Ring", mp: 32990, sp: 18990, img: ["https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg", "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg"] },
-    { name: "Intertwined Glim Diamond Ring", mp: 32990, sp: 18990, img: ["https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg", "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg"] },
+    {
+      name: "Intertwined Glim Diamond Ring",
+      mp: 32990,
+      sp: 18990,
+      img: [
+        "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg",
+        "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg",
+      ],
+    },
+    {
+      name: "Intertwined Glim Diamond Ring",
+      mp: 32990,
+      sp: 18990,
+      img: [
+        "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg",
+        "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg",
+      ],
+    },
   ];
   return (
     <main>
-      {products.map((item, index) => (
-        <>
-          {item.name}, {item.mp} - {item.sp} <br />
-          {item.img.map((url, index) => (
-            <>{url}</>
-          ))}
-        </>
-      ))}
       <Box
         sx={{
           background:
@@ -530,249 +538,94 @@ export default function SearchContainer() {
           </Grid>
           <Grid item xs={8.5}>
             <Grid container spacing={4}>
-              <Grid item xs={4}>
-                <Button
-                  light
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    // border: 1,
-                    width: "100%",
-                    p: 1,
-                    borderRadius: 4,
-                    "&: hover": {
-                      boxShadow: 5,
-                    },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      paddingBottom: "100%",
-                      backgroundImage:
-                        'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg")',
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center center",
-                      backgroundSize: "cover",
-                      border: "0.5px solid #ddd",
-
-                      marginBlockEnd: 1,
-                      borderRadius: 2,
-                      "&:hover": {
-                        backgroundImage:
-                          'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
-                      },
-                    }}
-                  ></Box>
-                  <Box>
-                    <Typography variant="h5" component="span" fontWeight={600}>
-                      ₹18,990
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      component="span"
-                      sx={{ ml: 1, textDecoration: "line-through" }}
+              {products.map((item, index) => (
+                <>
+                  <Grid item xs={4}>
+                    <Button
+                      light
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        // border: 1,
+                        width: "100%",
+                        p: 1,
+                        borderRadius: 4,
+                        "&: hover": {
+                          boxShadow: 5,
+                        },
+                      }}
                     >
-                      ₹32,990
-                    </Typography>
-                  </Box>
+                      <Box sx={{bgcolor: 'primary.badge',}}><Typography>BESTSELLER</Typography> </Box>
+                      <Box
+                        sx={{
+                          width: "100%",
+                          paddingBottom: "100%",
+                          backgroundImage: 'url("' + item.img[0] + '")',
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center center",
+                          backgroundSize: "cover",
+                          border: "0.5px solid #ddd",
 
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      textTransform: "none",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      width: "17.5vw",
-                    }}
-                    gutterBottom
-                  >
-                    Intertwined Glim Diamond Ringlim Diamond Ringlim Diamond
-                    Ring
-                  </Typography>
+                          marginBlockEnd: 1,
+                          borderRadius: 2,
+                          "&:hover": {
+                            backgroundImage: 'url("' + item.img[1] + '")',
+                          },
+                        }}
+                      ></Box>
+                      <Box>
+                        <Typography
+                          variant="h5"
+                          component="span"
+                          fontWeight={600}
+                        >
+                          ₹{(item.sp).toLocaleString('en-US')}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          component="span"
+                          sx={{ ml: 1, textDecoration: "line-through" }}
+                        >
+                          ₹{(item.mp).toLocaleString('en-US')}
+                        </Typography>
+                      </Box>
 
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      textTransform: "none",
-                    }}
-                    gutterBottom
-                    fontWeight={600}
-                  >
-                    Check Availablity {">"}
-                  </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Rating readOnly defaultValue={4} size="small" />{" "}
-                    <Typography component="span" size="sm" sx={{ ml: 1 }}>
-                      {"(4)"}
-                    </Typography>
-                  </Box>
-                </Button>
-              </Grid>
-              <Grid item xs={4}>
-                <Button
-                  light
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    // border: 1,
-                    width: "100%",
-                    p: 1,
-                    borderRadius: 4,
-                    "&: hover": {
-                      boxShadow: 5,
-                    },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      paddingBottom: "100%",
-                      backgroundImage:
-                        'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg")',
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center center",
-                      backgroundSize: "cover",
-                      border: "0.5px solid #ddd",
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          textTransform: "none",
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          width: "17.5vw",
+                          textAlign: 'left'
+                        }}
+                        gutterBottom
+                      >
+                        {item.name}
+                      </Typography>
 
-                      marginBlockEnd: 1,
-                      borderRadius: 2,
-                      "&:hover": {
-                        backgroundImage:
-                          'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
-                      },
-                    }}
-                  ></Box>
-                  <Box>
-                    <Typography variant="h5" component="span" fontWeight={600}>
-                      ₹18,990
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      component="span"
-                      sx={{ ml: 1, textDecoration: "line-through" }}
-                    >
-                      ₹32,990
-                    </Typography>
-                  </Box>
-
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      textTransform: "none",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      width: "17.5vw",
-                    }}
-                    gutterBottom
-                  >
-                    Intertwined Glim Diamond Ringlim Diamond Ringlim Diamond
-                    Ring
-                  </Typography>
-
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      textTransform: "none",
-                    }}
-                    gutterBottom
-                    fontWeight={600}
-                  >
-                    Check Availablity {">"}
-                  </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Rating readOnly defaultValue={4} size="small" />{" "}
-                    <Typography component="span" size="sm" sx={{ ml: 1 }}>
-                      {"(4)"}
-                    </Typography>
-                  </Box>
-                </Button>
-              </Grid>
-              <Grid item xs={4}>
-                <Button
-                  light
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    // border: 1,
-                    width: "100%",
-                    p: 1,
-                    borderRadius: 4,
-                    "&: hover": {
-                      boxShadow: 5,
-                    },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      paddingBottom: "100%",
-                      backgroundImage:
-                        'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_7_lar.jpg")',
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center center",
-                      backgroundSize: "cover",
-                      border: "0.5px solid #ddd",
-
-                      marginBlockEnd: 1,
-                      borderRadius: 2,
-                      "&:hover": {
-                        backgroundImage:
-                          'url("https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_1_lar.jpg")',
-                      },
-                    }}
-                  ></Box>
-                  <Box>
-                    <Typography variant="h5" component="span" fontWeight={600}>
-                      ₹18,990
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      component="span"
-                      sx={{ ml: 1, textDecoration: "line-through" }}
-                    >
-                      ₹32,990
-                    </Typography>
-                  </Box>
-
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      textTransform: "none",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      width: "17.5vw",
-                    }}
-                    gutterBottom
-                  >
-                    Intertwined Glim Diamond Ringlim Diamond Ringlim Diamond
-                    Ring
-                  </Typography>
-
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      textTransform: "none",
-                    }}
-                    gutterBottom
-                    fontWeight={600}
-                  >
-                    Check Availablity {">"}
-                  </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Rating readOnly defaultValue={4} size="small" />{" "}
-                    <Typography component="span" size="sm" sx={{ ml: 1 }}>
-                      {"(4)"}
-                    </Typography>
-                  </Box>
-                </Button>
-              </Grid>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          textTransform: "none",
+                        }}
+                        gutterBottom
+                        fontWeight={600}
+                      >
+                        Check Availablity {">"}
+                      </Typography>
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <Rating readOnly defaultValue={4} size="small" />{" "}
+                        <Typography component="span" size="sm" sx={{ ml: 1 }}>
+                          {"(4)"}
+                        </Typography>
+                      </Box>
+                    </Button>
+                  </Grid>
+                </>
+              ))}
             </Grid>
           </Grid>
         </Grid>

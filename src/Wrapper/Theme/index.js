@@ -5,6 +5,7 @@ export default function ThemeWrapper({ children }) {
     palette: {
       primary: {
         main: "#231535",
+        badge: "#f2debc",
       },
       secondary: {
         main: "#f6f4ff",
