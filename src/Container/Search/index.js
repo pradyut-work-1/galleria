@@ -556,7 +556,15 @@ export default function SearchContainer() {
                         },
                       }}
                     >
-                      <Box sx={{bgcolor: 'primary.badge',}}><Typography>BESTSELLER</Typography> </Box>
+                      <Box
+                        sx={{
+                          bgcolor: "badge.bestseller",
+                          px: 1,
+                          borderRadius: 0.5,
+                        }}
+                      >
+                        <Typography variant="body2">BESTSELLER</Typography>{" "}
+                      </Box>
                       <Box
                         sx={{
                           width: "100%",
@@ -580,14 +588,14 @@ export default function SearchContainer() {
                           component="span"
                           fontWeight={600}
                         >
-                          ₹{(item.sp).toLocaleString('en-US')}
+                          ₹{item.sp.toLocaleString("en-US")}
                         </Typography>
                         <Typography
                           variant="body2"
                           component="span"
                           sx={{ ml: 1, textDecoration: "line-through" }}
                         >
-                          ₹{(item.mp).toLocaleString('en-US')}
+                          ₹{item.mp.toLocaleString("en-US")}
                         </Typography>
                       </Box>
 
@@ -599,7 +607,7 @@ export default function SearchContainer() {
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           width: "17.5vw",
-                          textAlign: 'left'
+                          textAlign: "left",
                         }}
                         gutterBottom
                       >
