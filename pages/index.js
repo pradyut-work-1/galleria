@@ -1,9 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../src/Components/Layout/Header";
-import HomePageCarousel from "../src/Components/Home/Carousel"
+import HomePageCarousel from "../src/Components/Home/Carousel";
+import { useRouter } from "next/router";
+
+const getQuery = () => {
+  const router = useRouter();
+  console.log(router.pathname);
+};
 
 export default function Home() {
+  getQuery();
   return (
     <div>
       <Head>

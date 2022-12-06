@@ -12,9 +12,12 @@ import {
   FormControl,
   Button,
   Rating,
+  IconButton,
 } from "@mui/material";
 import React from "react";
 import UnstyledSelectSimple from "../../Components/Search/a/SortFilter";
+import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
+import Algolia from "../../algolia";
 
 export default function SearchContainer() {
   const products = [
@@ -537,10 +540,42 @@ export default function SearchContainer() {
             </Box>
           </Grid>
           <Grid item xs={8.5}>
+            <Algolia></Algolia>
             <Grid container spacing={4}>
               {products.map((item, index) => (
                 <>
                   <Grid item xs={4}>
+                    <Box
+                      sx={{
+                        top: "2.25rem",
+                        paddingInline: 2,
+                        position: "relative",
+                        zIndex: "1",
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Box sx={{ placeSelf: "center" }}>
+                        <Box
+                          sx={{
+                            bgcolor: "badge.bestseller",
+                            px: 1,
+                            width: "min-content",
+                          }}
+                        >
+                          <Typography variant="body2">BESTSELLER</Typography>{" "}
+                        </Box>
+                      </Box>
+                      {/* <IconButton
+                        sx={{
+                          width: "min-content",
+                          bgcolor: "white",
+                          // px: 1,
+                        }}
+                      >
+                        <FavoriteBorderRoundedIcon fontSize="sm" />
+                      </IconButton> */}
+                    </Box>
                     <Button
                       light
                       sx={{
@@ -556,7 +591,6 @@ export default function SearchContainer() {
                         },
                       }}
                     >
-                      <Box sx={{bgcolor: 'primary.badge',}}><Typography>BESTSELLER</Typography> </Box>
                       <Box
                         sx={{
                           width: "100%",
@@ -580,14 +614,14 @@ export default function SearchContainer() {
                           component="span"
                           fontWeight={600}
                         >
-                          ₹{(item.sp).toLocaleString('en-US')}
+                          ₹{item.sp.toLocaleString("en-US")}
                         </Typography>
                         <Typography
                           variant="body2"
                           component="span"
                           sx={{ ml: 1, textDecoration: "line-through" }}
                         >
-                          ₹{(item.mp).toLocaleString('en-US')}
+                          ₹{item.mp.toLocaleString("en-US")}
                         </Typography>
                       </Box>
 
@@ -599,7 +633,7 @@ export default function SearchContainer() {
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           width: "17.5vw",
-                          textAlign: 'left'
+                          textAlign: "left",
                         }}
                         gutterBottom
                       >
