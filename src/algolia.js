@@ -72,6 +72,9 @@ const Facets = () => (
         reset: "Clear all filters",
       }}
     />
+    <Panel header="Brand">
+      <Menu attribute="brand" />
+    </Panel>
     <Panel header="Categories">
       <RefinementList attribute="categories" operator="or" limit={10} />
     </Panel>
@@ -81,9 +84,6 @@ const Facets = () => (
     <Panel header="Price">
       <RangeInput key="price_input" attribute="price" />
     </Panel>
-    <div className="thank-you">
-      Data courtesy of <a href="https://developer.bestbuy.com/">Best Buy</a>
-    </div>
   </aside>
 );
 
@@ -133,8 +133,8 @@ const CustomResults = connectStateResults(({ searchState, searchResults }) => (
         <SortBy
           items={[
             { value: "instant_search", label: "Featured" },
-            { value: "instant_search_price_asc", label: "Price asc." },
-            { value: "instant_search_price_desc", label: "Price desc." },
+            // { value: "instant_search_price_asc", label: "Price asc." },
+            // { value: "instant_search_price_desc", label: "Price desc." },
           ]}
           defaultRefinement="instant_search"
         />
