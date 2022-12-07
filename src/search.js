@@ -35,10 +35,12 @@ const searchClient = algoliasearch(
 );
 
 export default function App() {
-  const [products, setProducts] = useState([]);
-  const Hit = ({ hit }) => setProducts([...products, hit]);
+  let products = [];
+  const Hit = ({ hit }) => {
+    
+    JSON.stringify(hit, 2, null);
+    };
 
-  console.log(products);
   return (
     <>
       <div className="ais-InstantSearch">
